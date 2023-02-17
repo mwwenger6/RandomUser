@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Random User</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel='stylesheet'  href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css'>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <style>
+
+         .row > div.col {
+            padding: 60px;
+
+        }
+
+        .row  {
+            margin: 40px auto;
+        }
+        
+        .container > div.row{
+            border: 1px solid black;
+            background-color: lightGray;
+            margin: 10px;
+        }
+
+        .profile {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            border: 3px solid rgb(184, 80, 66);
+        }
+
+        .card {
+            border-radius: 25px;
+            background-color: rgb(167, 190, 174);
+            padding: 20px;
+        }
+
+        #contact,  #addressTab, #ageTab, #genderTab{
+            padding: 20px;
+        }
+        
+        .inline-icon {
+            vertical-align: bottom;
+            font-size: 18px !important;
+        }
+
+        #search {
+            font-size: 16px; 
+            margin: 12px; 
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id ='container' class = 'container'>
+        <nav>
+            <div class="nav-wrapper">
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" required onkeyup="filter()" placeholder="Search for names..">
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        <div class = 'row'>
+            <div class = 'col s12 m6 l6' >
+                <div id='card1' class = 'card' align="center">
+                    <img id = 'image1' class = 'profile'>
+                    <h5 id = 'name1'></h5>
+                    <ul class = 'tabs' style="background-color: rgb(207, 201, 189);">
+                        <li class ='tab'><a href = '#contact1' style="color: rgb(184, 80, 66);">Contact Info</a></li>
+                        <li class ='tab'><a href = '#addressTab1' style="color: rgb(184, 80, 66);">Address</a></li>
+                        <li class ='tab'><a href = '#ageTab1' style="color: rgb(184, 80, 66);" >Age</a></li>
+                        <li class ='tab'><a href = '#genderTab1' style="color: rgb(184, 80, 66);">Gender</a></li>
+                    </ul>
+                    <div class = 'active' id='contact1' align="left" style="background-color: rgb(231, 232, 209);">
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>phone</i>
+                            <span>Phone: </span>
+                            <span id ='phone1'></span>
+                        </div>
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>email</i>
+                            <span>Email: </span>
+                            <span id ='email1'></span>
+                        </div>
+                    </div>
+                    <div id="addressTab1" style="background-color: rgb(231, 232, 209);">
+                        <i href= '#' class ='inline-icon material-icons' >map</i>
+                        <span>Address: </span>
+                        <span id ='address1'></span>
+                    </div>
+                    <div id="ageTab1" style="background-color: rgb(231, 232, 209);">
+                        <span>Age: </span>
+                        <span id ='age1'></span>
+                    </div>
+                    <div id="genderTab1" style="background-color: rgb(231, 232, 209);">
+                        <span>Gender: </span>
+                        <span id ='gender1'></span>
+                    </div>
+                </div>
+            </div>
+            <div class = 'col s12 m6 l6' >
+                <div id='card2' class = 'card' align="center">
+                    <img id = 'image2' class = 'profile'>
+                    <h5 id = 'name2'></h5>
+                    <ul class = 'tabs' style="background-color: rgb(207, 201, 189);">
+                        <li class ='tab'><a href = '#contact2' style="color: rgb(184, 80, 66);">Contact Info</a></li>
+                        <li class ='tab'><a href = '#addressTab2' style="color: rgb(184, 80, 66);">Address</a></li>
+                        <li class ='tab'><a href = '#ageTab2' style="color: rgb(184, 80, 66);" >Age</a></li>
+                        <li class ='tab'><a href = '#genderTab2' style="color: rgb(184, 80, 66);">Gender</a></li>
+                    </ul>
+                    <div class = 'active' id='contact2' align="left" style="background-color: rgb(231, 232, 209);">
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>phone</i>
+                            <span>Phone: </span>
+                            <span id ='phone2'></span>
+                        </div>
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>email</i>
+                            <span>Email: </span>
+                            <span id ='email2'></span>
+                        </div>
+                    </div>
+                    <div id="addressTab2" style="background-color: rgb(231, 232, 209);">
+                        <i href= '#' class ='inline-icon material-icons' >map</i>
+                        <span>Address: </span>
+                        <span id ='address2'></span>
+                    </div>
+                    <div id="ageTab2" style="background-color: rgb(231, 232, 209);">
+                        <span>Age: </span>
+                        <span id ='age2'></span>
+                    </div>
+                    <div id="genderTab2" style="background-color: rgb(231, 232, 209);">
+                        <span>Gender: </span>
+                        <span id ='gender2'></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class = 'col s12 m6 l6' >
+                <div id='card3' class = 'card' align="center">
+                    <img id = 'image3' class = 'profile'>
+                    <h5 id = 'name3'></h5>
+                    <ul class = 'tabs' style="background-color: rgb(207, 201, 189);">
+                        <li class ='tab'><a href = '#contact3' style="color: rgb(184, 80, 66);">Contact Info</a></li>
+                        <li class ='tab'><a href = '#addressTab3' style="color: rgb(184, 80, 66);">Address</a></li>
+                        <li class ='tab'><a href = '#ageTab3' style="color: rgb(184, 80, 66);" >Age</a></li>
+                        <li class ='tab'><a href = '#genderTab3' style="color: rgb(184, 80, 66);">Gender</a></li>
+                    </ul>
+                    <div class = 'active' id='contact3' align="left" style="background-color: rgb(231, 232, 209);">
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>phone</i>
+                            <span>Phone: </span>
+                            <span id ='phone3'></span>
+                        </div>
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>email</i>
+                            <span>Email: </span>
+                            <span id ='email3'></span>
+                        </div>
+                    </div>
+                    <div id="addressTab3" style="background-color: rgb(231, 232, 209);">
+                        <i href= '#' class ='inline-icon material-icons' >map</i>
+                        <span>Address: </span>
+                        <span id ='address3'></span>
+                    </div>
+                    <div id="ageTab3" style="background-color: rgb(231, 232, 209);">
+                        <span>Age: </span>
+                        <span id ='age3'></span>
+                    </div>
+                    <div id="genderTab3" style="background-color: rgb(231, 232, 209);">
+                        <span>Gender: </span>
+                        <span id ='gender3'></span>
+                    </div>
+                </div>
+            </div>
+            <div class = 'col s12 m6 l6' >
+                <div id='card4' class = 'card' align="center">
+                    <img id = 'image4' class = 'profile'>
+                    <h5 id = 'name4'></h5>
+                    <ul class = 'tabs' style="background-color: rgb(207, 201, 189);">
+                        <li class ='tab'><a href = '#contact4' style="color: rgb(184, 80, 66);">Contact Info</a></li>
+                        <li class ='tab'><a href = '#addressTab4' style="color: rgb(184, 80, 66);">Address</a></li>
+                        <li class ='tab'><a href = '#ageTab4' style="color: rgb(184, 80, 66);" >Age</a></li>
+                        <li class ='tab'><a href = '#genderTab4' style="color: rgb(184, 80, 66);">Gender</a></li>
+                    </ul>
+                    <div class = 'active' id='contact4' align="left" style="background-color: rgb(231, 232, 209);">
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>phone</i>
+                            <span>Phone: </span>
+                            <span id ='phone4'></span>
+                        </div>
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>email</i>
+                            <span>Email: </span>
+                            <span id ='email4'></span>
+                        </div>
+                    </div>
+                    <div id="addressTab4" style="background-color: rgb(231, 232, 209);">
+                        <i href= '#' class ='inline-icon material-icons' >map</i>
+                        <span>Address: </span>
+                        <span id ='address4'></span>
+                    </div>
+                    <div id="ageTab4" style="background-color: rgb(231, 232, 209);">
+                        <span>Age: </span>
+                        <span id ='age4'></span>
+                    </div>
+                    <div id="genderTab4" style="background-color: rgb(231, 232, 209);">
+                        <span>Gender: </span>
+                        <span id ='gender4'></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class = 'col s12 m6 l6' >
+                <div id='card5' class = 'card' align="center">
+                    <img id = 'image5' class = 'profile'>
+                    <h5 id = 'name5'></h5>
+                    <ul class = 'tabs' style="background-color: rgb(207, 201, 189);">
+                        <li class ='tab'><a href = '#contact5' style="color: rgb(184, 80, 66);">Contact Info</a></li>
+                        <li class ='tab'><a href = '#addressTab5' style="color: rgb(184, 80, 66);">Address</a></li>
+                        <li class ='tab'><a href = '#ageTab5' style="color: rgb(184, 80, 66);" >Age</a></li>
+                        <li class ='tab'><a href = '#genderTab5' style="color: rgb(184, 80, 66);">Gender</a></li>
+                    </ul>
+                    <div class = 'active' id='contact5' align="left" style="background-color: rgb(231, 232, 209);">
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>phone</i>
+                            <span>Phone: </span>
+                            <span id ='phone5'></span>
+                        </div>
+                        <div>
+                            <i href= '#' class ='inline-icon material-icons'>email</i>
+                            <span>Email: </span>
+                            <span id ='email5'></span>
+                        </div>
+                    </div>
+                    <div id="addressTab5" style="background-color: rgb(231, 232, 209);">
+                        <i href= '#' class ='inline-icon material-icons' >map</i>
+                        <span>Address: </span>
+                        <span id ='address5'></span>
+                    </div>
+                    <div id="ageTab5" style="background-color: rgb(231, 232, 209);">
+                        <span>Age: </span>
+                        <span id ='age5'></span>
+                    </div>
+                    <div id="genderTab5" style="background-color: rgb(231, 232, 209);">
+                        <span>Gender: </span>
+                        <span id ='gender5'></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='randomUser.js'></script> 
+</body>
+</html>
